@@ -16,5 +16,15 @@ namespace FormTest
         {
             InitializeComponent();
         }
+
+        private void sendButton_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.Service1Client client = new
+                ServiceReference1.Service1Client();
+
+            string fromWcfService = client.PrintHelloName(nameTextbox.Text);
+            nameLabel.Text = fromWcfService;
+
+        }
     }
 }
